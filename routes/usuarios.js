@@ -4,6 +4,7 @@ const router = express.Router()
 // importar el modelo usuario
 import user from '../models/user'
 
+
 // Hash Contraseña
 const bcrypt = require('bcrypt');
 const saltRounds = 10
