@@ -65,6 +65,24 @@ router.delete('/eliminar-solicitud/:id', async(req, res) => {
   }
 });
 
+// Put calificar solicitud
+router.put('/calificar-solicitud/:id', async(req, res) => {
+  const _id = req.params.id;
+  const body = req.body;
+  try {
+    const paqueteDB = await paquete.findByIdAndUpdate(
+      _id,
+      body,
+      {new: true});
+    res.json(paqueteDB);  
+  } catch (error) {
+    return res.status(400).json({
+      mensaje: 'Ocurrio un error',
+      error
+    })
+  }
+});
+
 // Put actualizar un paquete
 router.put('/actualizar-solicitud/:id', async(req, res) => {
   const _id = req.params.id;

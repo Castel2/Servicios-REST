@@ -14,6 +14,7 @@ const paquetesSchema = new Schema({
   destino: {type: String, required: [true, 'Destino obligatorio']},
   descripcion: {type: String, required: [true, 'Descripción obligatorio']},
   estado: {type: String, default: 'Pendiente', enum: estados},
+  calificacion: {type: String, default: '0'},
   date: {type: Date, default: Date.now},
 
 });
